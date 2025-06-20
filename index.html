@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Generador de Contraseñas | By Limense</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-lock"></i> Generador de Contraseñas</h1>
+            <p>Crea contraseñas seguras y únicas para proteger tus cuentas</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Generator Section -->
+            <section class="generator-section">
+                <div class="card">
+                    <h2><i class="fas fa-cog"></i> Configuración</h2>
+                    
+                    <!-- Length Slider -->
+                    <div class="form-group">
+                        <label for="length">
+                            <i class="fas fa-ruler"></i> Longitud: 
+                            <span id="lengthValue">12</span> caracteres
+                        </label>
+                        <input 
+                            type="range" 
+                            id="length" 
+                            min="4" 
+                            max="128" 
+                            value="12"
+                            class="slider"
+                        >
+                    </div>
+
+                    <!-- Character Options -->
+                    <div class="options-grid">
+                        <div class="option">
+                            <input type="checkbox" id="uppercase" checked>
+                            <label for="uppercase">
+                                <i class="fas fa-font"></i> Mayúsculas (A-Z)
+                            </label>
+                        </div>
+                        
+                        <div class="option">
+                            <input type="checkbox" id="lowercase" checked>
+                            <label for="lowercase">
+                                <i class="fas fa-font"></i> Minúsculas (a-z)
+                            </label>
+                        </div>
+                        
+                        <div class="option">
+                            <input type="checkbox" id="numbers" checked>
+                            <label for="numbers">
+                                <i class="fas fa-hashtag"></i> Números (0-9)
+                            </label>
+                        </div>
+                        
+                        <div class="option">
+                            <input type="checkbox" id="symbols" checked>
+                            <label for="symbols">
+                                <i class="fas fa-at"></i> Símbolos (!@#$...)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="generateBtn" class="btn-generate">
+                        <i class="fas fa-magic"></i> Generar Contraseña
+                    </button>
+                </div>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section">
+                <div class="card">
+                    <h2><i class="fas fa-key"></i> Tu Contraseña</h2>
+                    
+                    <!-- Password Display -->
+                    <div class="password-container">
+                        <input 
+                            type="text" 
+                            id="passwordDisplay" 
+                            class="password-display" 
+                            readonly
+                            placeholder="Haz click en 'Generar Contraseña'"
+                        >
+                        <button id="copyBtn" class="btn-copy" title="Copiar al portapapeles">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <!-- Strength Indicator -->
+                    <div class="strength-container">
+                        <div class="strength-label">
+                            <i class="fas fa-shield-alt"></i> Seguridad:
+                            <span id="strengthText">-</span>
+                        </div>
+                        <div class="strength-bar">
+                            <div id="strengthFill" class="strength-fill"></div>
+                        </div>
+                        <div id="strengthScore" class="strength-score">0/100</div>
+                    </div>
+
+                    <!-- Strength Details -->
+                    <div id="strengthDetails" class="strength-details">
+                        <!-- Se llena dinámicamente con JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section class="history-section">
+                <div class="card">
+                    <h2><i class="fas fa-history"></i> Historial</h2>
+                    <button id="clearHistoryBtn" class="btn-clear">
+                        <i class="fas fa-trash"></i> Limpiar Historial
+                    </button>
+                    <div id="historyList" class="history-list">
+                        <p class="no-history">No hay contraseñas generadas aún</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <i class="fas fa-heart"></i> 
+                Desarrollado por <strong>Limense</strong> | 2024
+            </p>
+            <p>
+                <i class="fas fa-info-circle"></i>
+                Las contraseñas se generan localmente en tu navegador
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
