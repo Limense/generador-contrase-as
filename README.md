@@ -16,7 +16,7 @@ Un generador de contraseñas moderno y profesional desarrollado con HTML, CSS y 
 
 ## 🚀 Demo en Vivo
 
-[Ver Demo](https://limense.github.io/password-generator)
+[Ver Demo](https://limense.github.io/generador-contrase-as)
 
 ## 🛠️ Tecnologías Utilizadas
 
